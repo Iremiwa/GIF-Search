@@ -10,13 +10,11 @@ xhr.open('GET', `https://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=5p
 xhr.onload= function() {
     if(this.status === 200) {
         const response = JSON.parse(this.responseText);
-        console.log(response);
+       
           
            response.data.forEach(function(gifSearch){
-            
-            console.log("gifResults", $('.gifResults'));
 
-               const output = `<img src = ${gifSearch.images.original.url} alt="results">`;
+               const output = `<img src = ${gifSearch.images.original.url} alt="imported-gifs">`;
                
                $('.gifResults').append(output);
        
